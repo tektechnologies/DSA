@@ -16,7 +16,7 @@ function missyElliot(allArrays) {
     console.log('this shows x after forloop ' + x);
     //takes array element starting from the end of the array and puts the element into the beggining position of the new array object revArray.
     revArray[missyMe] = allArrays[x];
-    console.log('this is the revArray[missyMe]'+ revArray[missyMe]);
+    console.log('this is current iteration of the revArray[missyMe] = allArrays[x] '+ revArray[missyMe]);
     // missyMe = missyMe + 1;
     missyMe++;
     console.log('this is missy me counter in the for loop ' + missyMe);
