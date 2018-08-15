@@ -1,23 +1,35 @@
 'use strict';
  
 function arrayInsert(array, value) {
-  //console.log(array);
-  //console.log(value);
+  console.log(array);
+  console.log(value);
   let newArray = [];
   let insertPoint = array.length/2;
   console.log(insertPoint);
 
   for(let x= 0; x < array.length; x++){
+    // if x <= insertPoint then keep array[x] at x
+    // if x == insertPoint then set value at x
+    // if x > insertPoint then keep array[x] at x+1
+
      //console.log(array);
     if(x === insertPoint){
+
       //console.log('this is the insert ' + insertPoint);
       newArray[x] = value;
-      continue;
+      newArray[x + 1] = array[x];
+      console.log('equal', newArray);
+
+    } else if (x > insertPoint) {
+      newArray[x + 1] = array[x];     
+      console.log('gt', newArray);
+
+    } else {
+      newArray[x] = array[x];     
+      console.log('lt', newArray);
     }
-    newArray[x] = array[x];     
   }
  return newArray;
-
 
 }
 module.exports = arrayInsert;
