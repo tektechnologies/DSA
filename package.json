@@ -10,5 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^23.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tektechnologies/DSA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tektechnologies/DSA/issues"
+  },
+  "homepage": "https://github.com/tektechnologies/DSA#readme"
 }
