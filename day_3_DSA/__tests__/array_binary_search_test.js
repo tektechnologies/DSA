@@ -2,7 +2,7 @@
 
 const binarySearch = require('../array_binary_search');
 
-describe('arrayShift', () => {
+describe('binarySearch', () => {
   it('array_binary_search will search array to find index of value', () => {
     expect(binarySearch([1,2,3,4,5], 3)).toBe(2);
     expect(binarySearch([1,2,3,4,5], 2)).toBe(1);
