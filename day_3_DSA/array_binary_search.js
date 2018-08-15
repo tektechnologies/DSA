@@ -30,7 +30,7 @@ function binarySearch(array, value) {
       maxVal,
       min: array[minVal],
       mid: array[splitArray],
-      max: array[maxVal]
+      max: array[maxVal],
     });
   }
   return -1;
@@ -42,19 +42,19 @@ function binarySearch(array, value) {
   // } else 
 
 
-    // while(minVal < maxVal){
-    //   splitArray = Math.floor(minVal+maxVal)/2;
-    //   console.log(splitArray);
-    //   if(array[splitArray] === value){
-    //   } else if(array[splitArray] < value){
-    //      return splitArray;
-    // } else if(array[splitArray] < value){
-    //   minVal = splitArray + 1;
-    // } else {
-    //   maxVal = splitArray - 1;
-    // }
- // }
-   // return -1;
+  // while(minVal < maxVal){
+  //   splitArray = Math.floor(minVal+maxVal)/2;
+  //   console.log(splitArray);
+  //   if(array[splitArray] === value){
+  //   } else if(array[splitArray] < value){
+  //      return splitArray;
+  // } else if(array[splitArray] < value){
+  //   minVal = splitArray + 1;
+  // } else {
+  //   maxVal = splitArray - 1;
+  // }
+  // }
+  // return -1;
   //console.log();
   
   
