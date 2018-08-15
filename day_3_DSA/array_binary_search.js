@@ -8,6 +8,10 @@ function binarySearch(array, value) {
   while(minVal < maxVal){
     splitArray = Math.ceil((minVal+maxVal)/2);
     console.log(splitArray);
+    if(array[slitArray] === value){
+      return splitArray;
+      console.log('splitArray value is ' + splitArray);
+    }
 
   };
 
