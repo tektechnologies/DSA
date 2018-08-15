@@ -18,12 +18,7 @@ function arrayInsert(array, value) {
   }
  return newArray;
 
- 
 
-
-   
-    //console.log(arrayTwo);
-    //console.log(arrayOne);
 }
 module.exports = arrayInsert;
 
