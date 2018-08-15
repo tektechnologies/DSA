@@ -1,0 +1,14 @@
+{
+  "name": "day_2_dsa",
+  "version": "1.0.0",
+  "description": "<!-- Short summary or background information -->",
+  "main": "array_shift.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.5.0"
+  }
+}
