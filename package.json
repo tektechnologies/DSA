@@ -4,6 +4,8 @@
   "description": "<!-- Short summary or background information -->",
   "main": "array_shift.js",
   "scripts": {
+    "lint": "eslint .",
+    "test:watch": "jest --watch",
     "test": "jest"
   },
   "author": "",
