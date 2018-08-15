@@ -22,7 +22,7 @@ function arrayInsert(array, value) {
     // if x == insertPoint then set value at x
     // if x > insertPoint then keep array[x] at x+1
 
-     //console.log(array);
+    //console.log(array);
     if(x === insertPoint){
 
       //console.log('this is the insert ' + insertPoint);
@@ -39,7 +39,7 @@ function arrayInsert(array, value) {
       console.log('lt', newArray);
     }
   }
- return newArray;
+  return newArray;
 
 }
 module.exports = arrayInsert;
