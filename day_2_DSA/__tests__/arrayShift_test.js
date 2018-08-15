@@ -14,11 +14,20 @@ describe('arrayShift', () => {
         expect(arrayInsert([], 1)).toEqual([1]);
   });
 
+  it('inserts value into an array with one element', () => {
+        expect(arrayInsert([1], 2)).toEqual([1,2]);
+  });
+
+  it('inserts value into an array with two elements', () => {
+        expect(arrayInsert([1,3], 2)).toEqual([1,2,3]);
+  });
+
   it('returns null given non-Array', () => {
         expect(arrayInsert({}, 3)).toBe(null);
   });
 
-  it('returns null if value is missing', () => {
-        expect(arrayInsert([])).toBe(null);
+  it('returns given array if value is missing', () => {
+        var array = [1,2,3];
+        expect(arrayInsert(array)).toBe(array);
   });
 });
