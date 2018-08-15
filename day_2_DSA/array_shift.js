@@ -1,10 +1,19 @@
 'use strict';
- 
+
 function arrayInsert(array, value) {
+  if (!Array.isArray(array)) return null;
+
+  if (value === undefined) return null;
+
   console.log(array);
   console.log(value);
   let newArray = [];
-  let insertPoint = array.length/2;
+
+  if (array.length === 0) {
+    newArray[0] = value;
+  }
+
+  let insertPoint = Math.ceil(array.length/2);
   console.log(insertPoint);
 
   for(let x= 0; x < array.length; x++){
