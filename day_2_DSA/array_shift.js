@@ -44,7 +44,3 @@ function arrayInsert(array, value) {
 }
 module.exports = arrayInsert;
 
-
-//console.log(arrayInsert(arrayOne));
-//console.log(arrayInsert(arrayTwo));
-//console.log(arrayInsert(arrayThree));
