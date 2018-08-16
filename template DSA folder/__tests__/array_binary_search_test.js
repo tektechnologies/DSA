@@ -4,25 +4,25 @@ const arrayInsert = require('../array_binary_search');
 
 describe('arrayShift', () => {
   it('', () => {
-        expect().toEqual();
+    expect().toEqual();
   });
 
   it('', () => {
-        expect().toEqual();
+    expect().toEqual();
   });
 
   it('', () => {
-        expect().toEqual();
+    expect().toEqual();
   });
 
   
 
   it('', () => {
-        expect().toBe();
+    expect().toBe();
   });
 
   it('returns given array if value is missing', () => {
        
-        expect().toBe();
+    expect().toBe();
   });
 });
