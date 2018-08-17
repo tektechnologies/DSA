@@ -31,23 +31,27 @@ LinkedList.prototype.push = function(val){
 LinkedList.prototype.includes = function(value){
 
   let current = this.head;
-
-  while(current.next !== null || current.value !== value){ 
-    current = current.next;
-  }
-  if(current.next === null){
-    return false;
-  }else if(current.value === value){
-    return true;
-  }
   
+  while(current.next !== null && current.value !== value){ 
+    current = current.next;
+    console.log('next', current);
+  }
+  if(current.value === value){
+    return true;
+  
+  }else if(current.next === null){
+    return false;
+  }
 };
 
 
 
-LinkedList.prototype.inserts = function(value){
-
-  let current = this.head;
+LinkedList.prototype.insert = function(value){
+  var node = {
+    value: value,
+    next: this.head,
+  };
+  this.head = node;
 
   
   
@@ -58,7 +62,3 @@ LinkedList.prototype.inserts = function(value){
 
 module.exports = LinkedList;
 
-
-//console.log(linkedList(arrayOne));
-//console.log(linkedList(arrayTwo));
-//console.log(linkedList(arrayThree));
