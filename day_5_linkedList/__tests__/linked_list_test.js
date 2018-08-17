@@ -3,26 +3,36 @@
 const linkedList = require('../linked_list');
 
 describe('linkedList', () => {
-  it('', () => {
+  it('the linked list has a head', () => {
     expect().toEqual();
   });
 
-
-
-  it('returns given array if value is missing', () => {
+  it('the linked list has nodes', () => {
        
     expect().toBe();
   });
 });
 
 describe('includes', () => {
-  it('', () => {
+  
+  it('this link list includes ', () => {
     expect().toEqual();
   });
 
   it('', () => {
     expect().toEqual();
   });
+
+  
+});
+
+describe('includes', () => {
+ 
+  it('this link list inserts', () => {
+    expect().toEqual();
+  });
+
+ 
 
   
 });

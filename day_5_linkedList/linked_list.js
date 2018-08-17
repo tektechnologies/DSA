@@ -13,11 +13,11 @@ LinkedList.prototype.push = function(val){
     value: val,
     next: null,
   };
+
   if(!this.head){
     this.head = node;
   }
   else{
-
     let current = this.head;
 
     while(current.next){
@@ -45,7 +45,13 @@ LinkedList.prototype.includes = function(value){
 
 
 
+LinkedList.prototype.inserts = function(value){
 
+  let current = this.head;
+
+  
+  
+};
 
 
 
