@@ -1,27 +1,22 @@
 'use strict';
 
-let linkList = new LinkedList();
-
-
 function LinkedList() {
   this.head = null;
-  console.log(this.head);
+  // console.log(this.head);
 }
 
-LinkedList.prototype.push = function(val){
+//.append(value) 
+//which adds a new node with the given value to the end of the list
+LinkedList.prototype.append = function(val){
   var node = {
     value: val,
     next: null,
   };
-
   if(!this.head){
     this.head = node;
-  }
-  else{
+  } else {
     let current = this.head;
-
     while(current.next){
-
       current = current.next;
     }
     current.next = node;
@@ -29,16 +24,13 @@ LinkedList.prototype.push = function(val){
 };
 
 LinkedList.prototype.includes = function(value){
-
   let current = this.head;
-  
   while(current.next !== null && current.value !== value){ 
     current = current.next;
-    console.log('next', current);
+    //console.log('next', current);
   }
   if(current.value === value){
     return true;
-  
   }else if(current.next === null){
     return false;
   }
@@ -51,14 +43,64 @@ LinkedList.prototype.insert = function(value){
     value: value,
     next: this.head,
   };
-  this.head = node;
+  this.head = node;  
+};
 
-  
-  
+
+// .insertBefore(value, newVal) 
+// which add a new node with the given newValue immediately before the first value node
+
+LinkedList.prototype.insertBefore = function(value, newVal){
+  console.log(this.head);
+  var node = {
+    value: newVal,
+    next: null,
+  };
+  let current = this.head;
+  console.log(current.next);
+  while( current.next !== null && current.next.value !== value){ 
+    current = current.next;
+    console.log('next', current);
+  }
+  let storedNode;
+  storedNode = current.next;
+  node.next = storedNode;
+  current.next = node;
+};
+
+
+
+// .insertAfter(value, newVal) 
+// which add a new node with the given newValue immediately after the first value node
+
+LinkedList.prototype.insertAfter = function(value, newVal){
+  console.log(this.head);
+  var node = {
+    value: newVal,
+    next: null,
+  };
+  let current = this.head;
+  console.log(current.next);
+  while( current.next !== null && current.value !== value){ 
+    current = current.next;
+    console.log('next', current);
+  }
+  let storedNode;
+  storedNode = current.next;
+  current.next = newVal;
+  current.next = storedNode;
 };
 
 
 
 
 module.exports = LinkedList;
+
+
+
+
+
+
+
+
 
