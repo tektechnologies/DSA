@@ -51,16 +51,16 @@ LinkedList.prototype.insert = function(value){
 // which add a new node with the given newValue immediately before the first value node
 
 LinkedList.prototype.insertBefore = function(value, newVal){
-  console.log(this.head);
+  // console.log(this.head);
   var node = {
     value: newVal,
     next: null,
   };
   let current = this.head;
-  console.log(current.next);
+  //console.log(current.next);
   while( current.next !== null && current.next.value !== value){ 
     current = current.next;
-    console.log('next', current);
+    // console.log('next', current);
   }
   let storedNode;
   storedNode = current.next;
@@ -90,6 +90,37 @@ LinkedList.prototype.insertAfter = function(value, newVal){
   current.next = newVal;
   current.next = storedNode;
 };
+
+
+
+// findFromEnd(k) 
+// find a node from the end of our list, then return that previous value
+
+LinkedList.prototype.findFromEnd = function(value){
+  
+  let current = this.head;
+  let position = 1;
+  console.log(current);
+
+  while(current.next){ 
+    current = current.next;
+    console.log('next', current);
+    position++;
+  }
+  current = this.head;
+
+  for(let x = 1; x < (position - value); x++){
+    current = current.next;
+  }
+  return current;
+};
+
+
+
+
+
+
+
 
 
 
