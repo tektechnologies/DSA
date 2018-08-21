@@ -65,7 +65,16 @@ describe('linkedList', () => {
     });
   });
 
-
+  describe('findFromEnd', () => {
+    //we now know insert is adding to the list before queried val. 
+    it('finds a value from the end of a list ', () => {  
+      let llist = new linkedList(); 
+      llist.insert('800'); 
+      llist.insert('900');
+      llist.insert('1000');
+      expect(llist.findFromEnd(2).value).toBe('1000'); 
+    });
+  });
  
 
   
