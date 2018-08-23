@@ -119,20 +119,18 @@ LinkedList.prototype.findFromEnd = function(value){
 
 
 
-// function NewList(nodeVal, next) {
-//   this.nodeVal = nodeVal;
-//   this.next = next;
-// } 
 
 LinkedList.prototype.mergeLists = function(listOne, listTwo){
   function NewList(nodeVal, next) {
     this.nodeVal = nodeVal;
     this.next = next;
-  } 
+  } //constructor third list.
+  
   // create new linked list pointer for the merge.
   var ListThree = new NewList(null, null);
   var newList = ListThree;
   // check for empty lists condition in the while.
+  //while either list has nodes.
   while (listOne !== null && listTwo !== null) {
     //now check for link list length is L1 is less than L2 
     if (listOne.data <= listTwo.data) { 
