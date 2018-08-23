@@ -3,6 +3,27 @@
 const linkedList = require('../linked_list');
 
 describe('linkedList', () => {
+  describe('toArray', () => {
+    it('returns empty array for empty list', () => {
+      let emptyList = new linkedList();
+      expect(emptyList.toArray()).toEqual([]);
+    });
+    it('returns array with one element for list with one element', () => {
+      let oneNode = new linkedList();
+      oneNode.insert('1');
+      expect(oneNode.toArray()).toEqual(['1']);
+    });
+    it('returns array with one element for list with one element', () => {
+      let threeNode = new linkedList();
+      threeNode.insert('3');
+      threeNode.insert('2');
+      threeNode.insert('1');
+      expect(threeNode.toArray()).toEqual(['1','2','3']);
+    });
+  
+  });
+
+  
   let ll = new linkedList(); 
   ll.append('100');
   it('the linked list has nodes', () => {
@@ -93,9 +114,13 @@ describe('linkedList', () => {
 
       let merge = newListOne.mergeLists(newListTwo);
       console.log(merge);
-      expect(merge).toEqual('1', 'a', '2', 'b', '3','c','d'); 
       
-      //expect(merge.head.value).toBe('3');
+      //expect(merge/empty object).toBe(null);
+      //--------------
+      expect(merge.toArray()).toEqual(['1', 'a', '2', 'b', '3','c','d']); 
+      //-----------------
+
+      expect(merge.head.value).toBe('1');
     });
   });
 

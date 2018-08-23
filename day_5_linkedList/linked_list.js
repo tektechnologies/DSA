@@ -100,11 +100,11 @@ LinkedList.prototype.findFromEnd = function(value){
   
   let current = this.head;
   let position = 1;
-  console.log(current);
+  // console.log(current);
 
   while(current.next){ 
     current = current.next;
-    console.log('next', current);
+    //console.log('next', current);
     position++;
   }
   current = this.head;
@@ -146,13 +146,14 @@ LinkedList.prototype.mergeLists = function(linkList){
 };
 
 
+LinkedList.prototype.toArray = function(list) {
 
-
-
-
-
-
-
+  let array  = [];
+  for(let current = this.head; current !== null; current = current.next){
+    array.push(current.value);
+  }
+  return array;
+};
 
 module.exports = LinkedList;
 
