@@ -89,7 +89,7 @@ describe('linkedList', () => {
       newListTwo.insert('BBBBB');
       newListTwo.insert('CCCCC');
       newListTwo.insert('DDDDD');
-      let mergeLists = mergeLists(newListOne, newListTwo);
+      let mergeLists = newListOne.mergeLists(newListTwo);
       expect(mergeLists).toBe('11111', 'AAAAA', '22222', 'BBBBB', '33333','CCCCC','DDDDD'); 
     });
   });
