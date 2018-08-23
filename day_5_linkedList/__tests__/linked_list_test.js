@@ -77,5 +77,28 @@ describe('linkedList', () => {
   });
  
 
+  describe('mergeLists', () => {
+    //we test to merge two lists return list three. 
+    it('takes two LL and merges them into a third ', () => {  
+      let newListOne = new linkedList(); 
+      newListOne.insert('11111'); 
+      newListOne.insert('22222');
+      newListOne.insert('33333');
+      let newListTwo = new linkedList(); 
+      newListTwo.insert('AAAAA'); 
+      newListTwo.insert('BBBBB');
+      newListTwo.insert('CCCCC');
+      newListTwo.insert('DDDDD');
+      let mergeLists = mergeLists(newListOne, newListTwo);
+      expect(mergeLists).toBe('11111', 'AAAAA', '22222', 'BBBBB', '33333','CCCCC','DDDDD'); 
+    });
+  });
+
+
+
+
+
+
+
   
 });
