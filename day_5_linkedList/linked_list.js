@@ -120,9 +120,32 @@ LinkedList.prototype.findFromEnd = function(value){
 
 
 
-LinkedList.prototype.mergeLists = function(listOne, listTwo){
-  
+LinkedList.prototype.mergeLists = function(linkList){
+  if(!linkList.head){
+    throw new Error('Missing list Values.');
+  }
+  let currentOne = this.head;
+  let currentTwo = linkList.head;
+
+  while(currentOne && currentTwo){
+    //sets L2 next to the vari~temp holds it.
+    let tempList = currentTwo.next;
+    console.log(tempList);
+    //back to L1 to add the L2 to the next "pos" in L1.
+    currentTwo.next = currentOne.next;
+    //add again to L1 the current L2 and set to L1 next.
+    currentOne.next = currentTwo;
+    //Now grab the L2 next and put it at L1 current.
+    currentOne = currentTwo.next;
+    //finishes mutating L1 by giving templist to L2 current which is L1 current.next.
+    currentTwo = tempList;
+  }
+  //if this it. Hueylewis and the newslist
+  console.log(this);
+  return this;
 };
+
+
 
 
 

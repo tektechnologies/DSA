@@ -81,16 +81,21 @@ describe('linkedList', () => {
     //we test to merge two lists return list three. 
     it('takes two LL and merges them into a third ', () => {  
       let newListOne = new linkedList(); 
-      newListOne.insert('11111'); 
-      newListOne.insert('22222');
-      newListOne.insert('33333');
+      newListOne.insert('3'); 
+      newListOne.insert('2');
+      newListOne.insert('1');
       let newListTwo = new linkedList(); 
-      newListTwo.insert('AAAAA'); 
-      newListTwo.insert('BBBBB');
-      newListTwo.insert('CCCCC');
-      newListTwo.insert('DDDDD');
-      let mergeLists = newListOne.mergeLists(newListTwo);
-      expect(mergeLists).toBe('11111', 'AAAAA', '22222', 'BBBBB', '33333','CCCCC','DDDDD'); 
+      newListTwo.insert('d'); 
+      newListTwo.insert('c');
+      newListTwo.insert('b');
+      newListTwo.insert('a');
+      // let merge = mergeLists(newListOne, newListTwo);
+
+      let merge = newListOne.mergeLists(newListTwo);
+      console.log(merge);
+      expect(merge).toEqual('1', 'a', '2', 'b', '3','c','d'); 
+      
+      //expect(merge.head.value).toBe('3');
     });
   });
 
