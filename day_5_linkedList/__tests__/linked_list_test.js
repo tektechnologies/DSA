@@ -3,6 +3,27 @@
 const linkedList = require('../linked_list');
 
 describe('linkedList', () => {
+  describe('toArray', () => {
+    it('returns empty array for empty list', () => {
+      let emptyList = new linkedList();
+      expect(emptyList.toArray()).toEqual([]);
+    });
+    it('returns array with one element for list with one element', () => {
+      let oneNode = new linkedList();
+      oneNode.insert('1');
+      expect(oneNode.toArray()).toEqual(['1']);
+    });
+    it('returns array with one element for list with one element', () => {
+      let threeNode = new linkedList();
+      threeNode.insert('3');
+      threeNode.insert('2');
+      threeNode.insert('1');
+      expect(threeNode.toArray()).toEqual(['1','2','3']);
+    });
+  
+  });
+
+  
   let ll = new linkedList(); 
   ll.append('100');
   it('the linked list has nodes', () => {
@@ -81,16 +102,25 @@ describe('linkedList', () => {
     //we test to merge two lists return list three. 
     it('takes two LL and merges them into a third ', () => {  
       let newListOne = new linkedList(); 
-      newListOne.insert('11111'); 
-      newListOne.insert('22222');
-      newListOne.insert('33333');
+      newListOne.insert('3'); 
+      newListOne.insert('2');
+      newListOne.insert('1');
       let newListTwo = new linkedList(); 
-      newListTwo.insert('AAAAA'); 
-      newListTwo.insert('BBBBB');
-      newListTwo.insert('CCCCC');
-      newListTwo.insert('DDDDD');
-      let mergeLists = mergeLists(newListOne, newListTwo);
-      expect(mergeLists).toBe('11111', 'AAAAA', '22222', 'BBBBB', '33333','CCCCC','DDDDD'); 
+      newListTwo.insert('d'); 
+      newListTwo.insert('c');
+      newListTwo.insert('b');
+      newListTwo.insert('a');
+      // let merge = mergeLists(newListOne, newListTwo);
+
+      let merge = newListOne.mergeLists(newListTwo);
+      console.log(merge);
+      
+      //expect(merge/empty object).toBe(null);
+      //--------------
+      expect(merge.toArray()).toEqual(['1', 'a', '2', 'b', '3','c']); 
+      //-----------------
+
+      expect(merge.head.value).toBe('1');
     });
   });
 

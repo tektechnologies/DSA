@@ -100,11 +100,11 @@ LinkedList.prototype.findFromEnd = function(value){
   
   let current = this.head;
   let position = 1;
-  console.log(current);
+  // console.log(current);
 
   while(current.next){ 
     current = current.next;
-    console.log('next', current);
+    //console.log('next', current);
     position++;
   }
   current = this.head;
@@ -120,48 +120,40 @@ LinkedList.prototype.findFromEnd = function(value){
 
 
 
-LinkedList.prototype.mergeLists = function(listOne, listTwo){
-  function NewList(nodeVal, next) {
-    this.nodeVal = nodeVal;
-    this.next = next;
-  } //constructor third list.
-  
-  // create new linked list pointer for the merge.
-  var ListThree = new NewList(null, null);
-  var newList = ListThree;
-  // check for empty lists condition in the while.
-  //while either list has nodes.
-  while (listOne !== null && listTwo !== null) {
-    //now check for link list length is L1 is less than L2 
-    if (listOne.data <= listTwo.data) { 
-      //then we set L1 node value to list three next
-      // at the head position.
-      newList.next = listOne;
-      listOne = listOne.next;
-    } else {
-      newList.next = listTwo;
-      listTwo = listTwo.next;
-    }
-    newList = newList.next;
+LinkedList.prototype.mergeLists = function(linkList){
+  if(!linkList.head){
+    throw new Error('Missing list Values.');
   }
-  
-  // once we reach end of a linked list, append the other 
-  // adds which ever ending node to the newlist end node
-  //got help from david on this part.
-  if (listOne === null) { newList.next = listTwo; }
-  if (listTwo === null) { newList.next = listOne; }
-  
-  // once final node added run return for new merged linked list
-  return ListThree.next;
-  
+  let currentOne = this.head;
+  let currentTwo = linkList.head;
+
+  while(currentOne && currentTwo){
+    //sets L2 next to the vari~temp holds it.
+    let tempList = currentTwo.next;
+    console.log(tempList);
+    //back to L1 to add the L2 to the next "pos" in L1.
+    currentTwo.next = currentOne.next;
+    //add again to L1 the current L2 and set to L1 next.
+    currentOne.next = currentTwo;
+    //Now grab the L2 next and put it at L1 current.
+    currentOne = currentTwo.next;
+    //finishes mutating L1 by giving templist to L2 current which is L1 current.next.
+    currentTwo = tempList;
+  }
+  //if this it. Hueylewis and the newslist
+  console.log(this);
+  return this;
 };
 
 
+LinkedList.prototype.toArray = function(list) {
 
-
-
-
-
+  let array  = [];
+  for(let current = this.head; current !== null; current = current.next){
+    array.push(current.value);
+  }
+  return array;
+};
 
 module.exports = LinkedList;
 
