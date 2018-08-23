@@ -117,7 +117,7 @@ describe('linkedList', () => {
       
       //expect(merge/empty object).toBe(null);
       //--------------
-      expect(merge.toArray()).toEqual(['1', 'a', '2', 'b', '3','c','d']); 
+      expect(merge.toArray()).toEqual(['1', 'a', '2', 'b', '3','c']); 
       //-----------------
 
       expect(merge.head.value).toBe('1');
