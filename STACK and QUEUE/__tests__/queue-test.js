@@ -8,7 +8,6 @@ describe('queue', () => {
     let queue = new Queue();
     // Assert
     expect(queue.count).toBe(0);
-
     // Act
     queue.enqueue(1);
     queue.enqueue(2);
@@ -18,17 +17,14 @@ describe('queue', () => {
     queue.enqueue(22);
     expect(queue.toArray()).toEqual([1,2,3,22]);
   });
+});
 
-  describe('queue', () => {
-    it('can  dequeue in expected order', () => {
-      // Arrange
+describe('queue', () => {
+  it('can  dequeue in expected order', () => {
+    let queue = new Queue();
+    
     queue.enqueue({ theMatrix: true });
     expect(queue.toArray()).toEqual([1, 2, 3, 22, { theMatrix: true }]);
-
-    // Uses Queue.inspect()
-    console.log(queue);
-    // Uses Queue.toString()
-    console.log(`${queue}`);
 
     // Assert
     expect(queue.count).toBe(5);
@@ -52,3 +48,4 @@ describe('queue', () => {
     // Assert
     expect(queue.count).toBe(0);
   });
+});
