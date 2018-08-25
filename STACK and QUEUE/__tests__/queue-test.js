@@ -52,4 +52,3 @@ describe('queue', () => {
     // Assert
     expect(queue.count).toBe(0);
   });
-});
