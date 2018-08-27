@@ -1,6 +1,6 @@
 'use strict';
 
-var Queue = require('../../lib/queue');
+var Queue = require('../../lib/queue-with-stacks');
 
 describe('queue', () => {
   it('can enqueue in expected order', () => {
