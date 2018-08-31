@@ -15,7 +15,26 @@ class Queue {
     this.value.push(value);
   }
 
-  dequeue() {
+  dequeue(value) {
+    let deeQ = this.tail;
+    if(!deeQ){
+      throw new Error('This deeQ is missing a Q');  
+    }
+    
+
+
+
+
+
+
+    if(value){
+     
+
+
+
+    }
+
+
    
   }
 
