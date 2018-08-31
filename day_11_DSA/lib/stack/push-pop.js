@@ -18,6 +18,9 @@ class PushPopStack {
   }
 
   push(value) {
+    if(!value){
+      throw new Error('Push a Value.');
+    }
     //creat new node
     let newHead = new Node(value);
     //make .next of new head this.head,
@@ -30,11 +33,20 @@ class PushPopStack {
  
 
   pop() {
+    if(!this.head){
+      throw new Error('Stack is empty');
+    }
+    let curr = this.head;
+    //check for null
+    if(curr === null){
+      return 'No Nodes in List.';
+    }
+    //set the th
+    curr = this.head.next;
     this.count--;
-    return this.values.pop();
+    return curr.value;
   }
-
- 
 }
 
+ 
 module.exports = PushPopStack;
