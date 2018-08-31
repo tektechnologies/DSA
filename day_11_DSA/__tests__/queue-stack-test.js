@@ -1,16 +1,20 @@
 'use strict';
 
-var Queue = require('../../lib/queue-with-stacks');
+var Queue = require('../lib/queue-with-stacks');
 
 describe('queue', () => {
   describe('enqueue', () => {
-
-
+    it('throws error on null value', () => {
+      let nullNode = new Queue();
+      expect(()=> nullNode.enqueue()).toThrowError('Null Node Error.');
+    });
     it('can enqueue in expected order', () => {
-      it('throws error on null value', () => {
-        let nullNode = new Queue();
-        expect(()=> nullNode.enqueue()).toThrowError('');
-      })
+      let addEnq = new Queue();
+      addEnq.enqueue(1);
+      addEnq.enqueue(2);
+      addEnq.enqueue(3);
+      expect(addEnq.value.head.value).toBe(3);
+     
 
 
 

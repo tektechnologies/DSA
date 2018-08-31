@@ -1,23 +1,22 @@
 'use strict';
 
+const PushPopStack = require('../lib/push-pop');
+
 class Queue {
   
   constructor() {
-    this.count = 0;
-    this.values = [];
+    this.value = new PushPopStack();
   }
 
   enqueue(value) {
-    this.values[this.count] = value;
-    // this.values.push(value);
-    this.count++;
+    if(!value){
+      throw new Error('Null Node Error.');
+    }
+    this.value.push(value);
   }
 
   dequeue() {
-    this.count--;
-    // How would we shift without shift?
-
-    return this.values.shift();
+   
   }
 
   
