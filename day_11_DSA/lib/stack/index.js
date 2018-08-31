@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./push-pop');
+module.exports = require('../push-pop');
