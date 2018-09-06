@@ -3,6 +3,7 @@
 
 //create and initialize the node for the root and 
 //leafs that has a L and R.
+//define outside the tree then have a constructor.
 class Node{
   constructor(data){
     this.data = data;
@@ -64,25 +65,32 @@ class TreeSearch{
       if(leafData.data === data){
         return leafData;
       }
-
-
     }
-
-    
-
-
-
   }
 
 
-
-  remove(node){
-
-
-
-
+  //method that calls removeData for removing node/leaf.
+  remove(data){
+    this.root = this.removeData(this.root, data);
+  }
+  removeData(leafData, delNode){
+    if(leafData === null){
+      return null;
+    }
+    if(delNode < leafData.data){
+      leafData.left = this.removeData(leafData.left, delNode);
+      return leafData;
+    }
+    // if(delNode > leafData.data){
+    //   leafData.right = this.removeData(leafData.right, delNode);
+    //   return leafData;
+    // } else if(leafData.right === null){
+    //   leafData = leafData.left;
+    //   return leafData;
+    // }
   }
 
+  
 
 
    
