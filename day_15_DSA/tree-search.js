@@ -25,14 +25,33 @@ class TreeSearch{
     } else {
       leaf = data;
       console.log(leaf);
+      console.log(data);
     }
     if(!this.root){
       this.root = leaf;
       console.log(this.root);
       return this;
-      
     }
-    
+    let leafData = this.root;
+    while(leafData){
+      if(data < leafData.data){
+        if(leafData.left){
+          leafData = leafData.left;
+        } else {
+          leafData.left = leaf;
+          return;
+        }
+      }
+      if(data > leafData.data){
+        if(leafData.right){
+          leafData = leafData.right;
+        } else {
+          leafData.right = leaf;
+          return;
+        }
+      }
+
+    }    return this; 
   }//close the insert function
 
 

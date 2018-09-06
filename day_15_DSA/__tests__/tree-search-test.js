@@ -14,6 +14,9 @@ describe('sort search tree', () => {
     let sTree = new TreeSearch();
     sTree.insert(5);
     expect(sTree.root).not.toBe(null);
+    expect(sTree.root).toBe(5);
+    // sTree.insert(4);
+    // expect(sTree.root.left).toBe(4);
   });
 
 
