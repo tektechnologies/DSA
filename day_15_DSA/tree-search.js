@@ -51,7 +51,24 @@ class TreeSearch{
   }//close the insert function
 
 
-  find(node) {
+  find(data) {
+    //starting place.
+    let leafData = this.root;
+    while(leafData.data !== null){
+      if(leafData < data){
+        leafData = leafData.right;
+      }
+      if(leafData > data){
+        leafData = leafData.left;
+      }
+      if(leafData.data === data){
+        return leafData;
+      }
+
+
+    }
+
+    
 
 
 

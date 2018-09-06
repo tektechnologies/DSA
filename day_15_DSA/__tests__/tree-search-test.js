@@ -27,7 +27,11 @@ describe('sort search tree', () => {
     sTree.insert(5);
     sTree.insert(4);
     sTree.insert(6);
-    expect().toBe();
+    sTree.insert(10);
+    expect(sTree.root.right.data).toBe(6);
+    expect(sTree.root.left.data).toBe(4);
+    expect(sTree.root.right.right.data).toBe(10);
+
   });
 
 });
