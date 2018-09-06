@@ -20,12 +20,8 @@ class TreeSearch{
   //insert function to insert data into our tree nodes into leafs.
   insert(data) {
     let leaf;
-    if(data === null){
+    if(data !== null){
       leaf = new Node(data);
-    } else {
-      leaf = data;
-      console.log(leaf);
-      console.log(data);
     }
     if(!this.root){
       this.root = leaf;
@@ -55,7 +51,42 @@ class TreeSearch{
   }//close the insert function
 
 
+  find(node) {
 
+
+
+  }
+
+
+
+  remove(node){
+
+
+
+
+  }
+
+
+
+   
+  serialize() {
+
+
+
+
+  }
+
+
+
+
+
+  deserialize(){
+
+
+
+
+
+  }
 
 
 }//close tree search
