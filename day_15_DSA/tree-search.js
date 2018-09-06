@@ -81,13 +81,13 @@ class TreeSearch{
       leafData.left = this.removeData(leafData.left, delNode);
       return leafData;
     }
-    // if(delNode > leafData.data){
-    //   leafData.right = this.removeData(leafData.right, delNode);
-    //   return leafData;
-    // } else if(leafData.right === null){
-    //   leafData = leafData.left;
-    //   return leafData;
-    // }
+    if(delNode > leafData.data){
+      leafData.right = this.removeData(leafData.right, delNode);
+      return leafData;
+    } else if(leafData.right === null){
+      leafData = leafData.left;
+      return leafData;
+    }
   }
 
   
