@@ -130,7 +130,7 @@ class TreeSearch{
     for(let x = 0; x < data.length; x++){
       this.insert(data[x]);
     }
-  }
+  }//https://stackoverflow.com/questions/3757495/javascript-looping-through-a-json-string
 
 
 }//close tree search
