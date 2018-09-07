@@ -49,8 +49,32 @@ describe('sort search tree', () => {
     expect(sTree.root.right).toBe(null);
   });
 
+  it('can serialize data for root and leafs', () => {
+    let sTree = new TreeSearch();
+    expect(sTree.root).toBe(null);
+   
+    sTree.insert(5);
+    sTree.insert(4);
+    sTree.insert(6);
+    sTree = sTree.serialize();
+    expect(sTree[0]).toBe(5);
+    expect(sTree[2,1,0]).toBe(5,4,6);
+    expect(sTree[0,1,2]).toBe(6,4,5);
+  });
 
-
+  it('can deserialize data for root and leafs', () => {
+    let sTree = new TreeSearch();
+    sTree.insert(5);
+    expect(sTree.root).not.toBe(null);
+   
+    // sTree.insert(5);
+    // sTree.insert(4);
+    // sTree.insert(6);
+    // sTree = sTree.serialize();
+    // expect(sTree[0]).toBe(5);
+    // expect(sTree[2,1,0]).toBe(5,4,6);
+    // expect(sTree[0,1,2]).toBe(6,4,5);
+  });
 
 
 

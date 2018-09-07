@@ -93,24 +93,43 @@ class TreeSearch{
   
 
 
-   
-  serialize() {
+  //tried this didnt work?
+  //  let serialize = function(data) {
+  //     let result = [];
+  //     runSerialize(data, result);
+  //     return result.join(',');
+  //   }
 
+  //   let runSerialize = function(leafData, nodeOut){
+  //     if(!leafData){
+  //       nodeOut.push('#');
+  //       return;
+  //     }
+  //     nodeOut.push(leafData.data);
+  //     runSerialize(leafData.left, nodeOut);
+  //     runSerialize(leafData.right, nodeOut);
+  //   // }
 
-
-
+  serialize(){
+    let arrSerial = [];
+    const serializeIt = function(data){
+      if(!data){
+        return;
+      }
+      arrSerial.push(data.data);
+      serializeIt(data.left);
+      serializeIt(data.right);
+    };
+    serializeIt(this.root);
+    return arrSerial;
   }
 
 
 
-
-
-  deserialize(){
-
-
-
-
-
+  deserialize(data){
+    for(let x = 0; x < data.length; x++){
+      this.insert(data[x]);
+    }
   }
 
 
