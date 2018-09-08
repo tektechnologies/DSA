@@ -31,15 +31,18 @@ class CutieQueue {
       this.tail = newPet;
     }//if we have a head and tail, lets add new pet to nodes tail.next
     this.tail.next = newPet;
-    console.log(newPet);
+    // console.log(newPet);
     newPet.previous = this.tail;
-    console.log(this.tail);
+    //console.log(this.tail);
     this.tail = newPet;
-    console.log(newPet);
-    this.lenght++;
+    //console.log(newPet);
+    this.length++;
     //now that we have added to total pets, lets add by type
-    if(newPet.pet.type === 'cat'){
+    if(newPet.pet.type === 'tabby'){
       this.catCount++;
+    }
+    if(newPet.pet.type === 'lab'){
+      this.dogCount++;
     }
   }
 
