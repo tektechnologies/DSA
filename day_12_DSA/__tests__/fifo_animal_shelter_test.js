@@ -17,6 +17,12 @@ describe('In and Out Animal Hostel', () => {
     };
     cQue.enqueue(cat);
     expect(cQue.head.pet.type).toBe('tabby');
+    let dog = {
+      type: 'lab',
+      name: 'yeejah',
+    };
+    cQue.enqueue(dog);
+    expect(cQue.head.next.pet.type).toBe('lab');
   });
 
 });
