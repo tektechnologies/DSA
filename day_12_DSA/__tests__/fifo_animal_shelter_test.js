@@ -33,15 +33,29 @@ describe('In and Out Animal Hostel', () => {
 
 
 
-
-
-
-
-
-
-
-describe('queue', () => {
+describe('dequeue', () => {
   it('can  dequeue in expected order', () => {
-    
+    let cQue = new CutieQueue();
+    let cat = {
+      type: 'tabby',
+      name: 'garrylasereyes',
+    };
+    let dog = {
+      type: 'lab',
+      name: 'yeejah',
+    };
+    let kity = {
+      type: 'tabby',
+      name: 'tom',
+    };
+    cQue.enqueue(cat);
+    cQue.enqueue(dog);
+    cQue.enqueue(kity);
+
+    expect(cQue.head.pet.name).toBe('garrylasereyes');
+
+    // let petAdopt = cQue.dequeue('tabby');
+    // expect(petAdopt.type).toBe('tabby');
+    // expect(petAdopt.name).toBe('garrylasereyes');
   });
 });

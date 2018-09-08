@@ -48,18 +48,47 @@ class CutieQueue {
 
 
 
+  dequeue(adoptedPet) {
+    if(!adoptedPet){
+      const adoptPet = this.head.animal;
+      this.head = this.head.next;
+      this.head.next = null;
+      //adopt pet variable is set
+      if(adoptPet.type === 'tabby'){
+        this.catCount--;
+      }
+      if(adoptPet.type === 'lab'){
+        this.dogCount--;
+      }
+      //reduce total pet count
+      this.length--;
+      return adoptedPet;
+    }
+    let nextPetToGo = this.head;
+    while(nextPetToGo.pet.type !== adoptedPet){
+      nextPetToGo = this.head.next;
+      console.log(this.head.next);
+    }
+    let newAdoptedPet = nextPetToGo.pet;
+    //
+    nextPetToGo.previous.next = nextPetToGo.next;
+    //
+    if(newAdoptedPet.type === 'tabby'){
+      this.catCount--;
+    }
+    if(newAdoptedPet.type === 'lab'){
+      this.dogCount--;
+    }
+    this.length--;
+    return nextPetToGo;
 
 
 
 
-
-
-
-  dequeue() {
     
   }
 
   
-}
+}//close class Cutie Queue
 
 module.exports = CutieQueue;
