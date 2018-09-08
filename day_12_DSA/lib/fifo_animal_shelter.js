@@ -1,12 +1,20 @@
 'use strict';
 
-class Queue {
+class CutieQueue {
   
   constructor() {
-   
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+    this.catCount = 0;
+    this.dogCount = 0;
+
   }
 
-  enqueue(value) {
+  enqueue(pet) {
+    if(!pet){
+      return null;
+    }
    
   }
 
@@ -17,4 +25,4 @@ class Queue {
   
 }
 
-module.exports = Queue;
+module.exports = CutieQueue;
