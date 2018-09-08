@@ -1,6 +1,6 @@
 'use strict';
 
-
+//this is the object that we adopt out our pet constuctor. 
 //pet object constructor
 class Pet{
   constructor(adoptPet){
@@ -9,7 +9,7 @@ class Pet{
     this.previous = null;  
   }
 }
-
+//create the queue for pets to line up for adoption
 class CutieQueue {
   //queue constructor
   constructor() {
