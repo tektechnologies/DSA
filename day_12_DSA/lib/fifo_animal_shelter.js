@@ -53,16 +53,8 @@ class CutieQueue {
       const adoptPet = this.head.animal;
       this.head = this.head.next;
       this.head.next = null;
-      //adopt pet variable is set
-      if(adoptPet.type === 'tabby'){
-        this.catCount--;
-      }
-      if(adoptPet.type === 'lab'){
-        this.dogCount--;
-      }
-      //reduce total pet count
-      this.length--;
-      console.log(adoptedPet);
+     
+      // console.log(adoptedPet);
       return adoptedPet;
     }
     let nextPetToGo = this.head;

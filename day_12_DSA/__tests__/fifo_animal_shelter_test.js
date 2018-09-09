@@ -58,5 +58,7 @@ describe('dequeue', () => {
     let petAdopt = cQue.dequeue('tabby');
     expect(petAdopt.pet.name).toBe('garrylasereyes');
     expect(petAdopt.pet.type).toBe('tabby');
+    expect(cQue.catCount).toBe(1);
+    expect(cQue.dogCount).toBe(1);
   });
 });
