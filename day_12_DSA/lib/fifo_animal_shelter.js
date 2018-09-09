@@ -50,23 +50,23 @@ class CutieQueue {
 
   dequeue(adoptedPet) {
     if(!adoptedPet){
-      const adoptPet = this.head.animal;
+      const adoptPet = this.head.pet;
       this.head = this.head.next;
       this.head.next = null;
-     
       // console.log(adoptedPet);
-      return adoptedPet;
+      return adoptPet;
     }
     let nextPetToGo = this.head;
     console.log(nextPetToGo);
     while(nextPetToGo.pet.type !== adoptedPet){
       nextPetToGo = this.head.next;
-      console.log(this.head.next);
+      console.log(nextPetToGo);
     }
     let newAdoptedPet = nextPetToGo.pet;
+    console.log(newAdoptedPet);
     //
     nextPetToGo.previous.next = nextPetToGo.next;
-    //
+    //reduce our pet count as we adopt pets out to other pets. 
     if(newAdoptedPet.type === 'tabby'){
       this.catCount--;
     }

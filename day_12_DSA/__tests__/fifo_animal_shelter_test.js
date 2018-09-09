@@ -9,6 +9,7 @@ describe('In and Out Animal Hostel', () => {
     expect(cQue.enqueue()).toBe(null);
   });
 
+  
   it('can add pet to adopt', () => {
     let cQue = new CutieQueue();
     let cat = {
@@ -26,7 +27,6 @@ describe('In and Out Animal Hostel', () => {
     expect(cQue.head.next.pet.type).toBe('lab');
     expect(cQue.dogCount).toBe(1);
     expect(cQue.length).toBe(2);
-   
   });
 
 });
@@ -34,6 +34,17 @@ describe('In and Out Animal Hostel', () => {
 
 
 describe('dequeue', () => {
+
+
+  it('can handle null denqueue in expected order', () => {
+    let cQue = new CutieQueue();
+    expect(cQue.enqueue()).toBe(null);
+    //let petAdopt = cQue.dequeue('tabby');
+    // expect(petAdopt.pet.type).toBe('adoptedPet');
+  });
+
+
+
   it('can  dequeue in expected order', () => {
     let cQue = new CutieQueue();
     let cat = {
