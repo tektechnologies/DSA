@@ -71,5 +71,28 @@ describe('dequeue', () => {
     expect(petAdopt.pet.type).toBe('tabby');
     expect(cQue.catCount).toBe(1);
     expect(cQue.dogCount).toBe(1);
+
+  });
+
+  it('can  dequeue in expected order', () => {
+    let cQue = new CutieQueue();
+  
+    let dog = {
+      type: 'lab',
+      name: 'yeejah',
+    };
+    let kity = {
+      type: 'tabby',
+      name: 'tom',
+    };
+    
+    cQue.enqueue(dog);
+    cQue.enqueue(kity);
+
+    let petAdopt2 = cQue.dequeue();
+    expect(cQue.dogCount).toBe(0);
+    expect(cQue.catCount).toBe(1);
+    expect(petAdopt2.name).toBe('yeejah');
+
   });
 });

@@ -49,22 +49,39 @@ class CutieQueue {
 
 
   dequeue(adoptedPet) {
+
     if(!adoptedPet){
       const adoptPet = this.head.pet;
       this.head = this.head.next;
       this.head.next = null;
+
+      if(adoptPet.type === 'tabby'){
+        this.catCount--;
+      }
+      if(adoptPet.type === 'lab'){
+        this.dogCount--;
+      }
+      this.length--;
       // console.log(adoptedPet);
       return adoptPet;
     }
+
+
+
+
     let nextPetToGo = this.head;
     console.log(nextPetToGo);
+
     while(nextPetToGo.pet.type !== adoptedPet){
       nextPetToGo = this.head.next;
       console.log(nextPetToGo);
     }
+
+
     let newAdoptedPet = nextPetToGo.pet;
     console.log(newAdoptedPet);
-    //
+    //while our nextPetToGo is our this.head.next we can
+    //make the nextPetToGo prev.next the next pet to be adopted the now nextPetToGo.next
     nextPetToGo.previous.next = nextPetToGo.next;
     //reduce our pet count as we adopt pets out to other pets. 
     if(newAdoptedPet.type === 'tabby'){
@@ -73,7 +90,9 @@ class CutieQueue {
     if(newAdoptedPet.type === 'lab'){
       this.dogCount--;
     }
+    //decrease pet length.
     this.length--;
+    //give a kid his dog or cat
     return nextPetToGo;
 
 
