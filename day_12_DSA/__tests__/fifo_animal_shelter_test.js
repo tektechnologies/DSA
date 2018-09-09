@@ -53,9 +53,10 @@ describe('dequeue', () => {
     cQue.enqueue(kity);
 
     expect(cQue.head.pet.name).toBe('garrylasereyes');
-
-    // let petAdopt = cQue.dequeue('tabby');
-    // expect(petAdopt.type).toBe('tabby');
-    // expect(petAdopt.name).toBe('garrylasereyes');
+    expect(cQue.head.next.next.pet.type).toBe('tabby');
+    //dequeue
+    let petAdopt = cQue.dequeue('tabby');
+    expect(petAdopt.pet.name).toBe('garrylasereyes');
+    expect(petAdopt.pet.type).toBe('tabby');
   });
 });

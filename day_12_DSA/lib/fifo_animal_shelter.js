@@ -62,9 +62,11 @@ class CutieQueue {
       }
       //reduce total pet count
       this.length--;
+      console.log(adoptedPet);
       return adoptedPet;
     }
     let nextPetToGo = this.head;
+    console.log(nextPetToGo);
     while(nextPetToGo.pet.type !== adoptedPet){
       nextPetToGo = this.head.next;
       console.log(this.head.next);
