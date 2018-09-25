@@ -1,21 +1,10 @@
 'use strict';
+const HashMap = require('../lib/repeated_word');
+const strRepeatWord = require('../__test__/strRepeatWord');
+const LinkedList = require('../linked-list/index');
 
-var FizzBuzz = require('../../lib/fizzbuzztree');
-
-describe('fizz', () => {
+describe('testing hash maps', () => {
   it('can enqueue in expected order', () => {
    
-  });
-});
-
-describe('buzz', () => {
-  it('can  dequeue in expected order', () => {
-  
-  });
-});
-
-describe('fizzbuzz', () => {
-  it('can  dequeue in expected order', () => {
-  
   });
 });
