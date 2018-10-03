@@ -38,20 +38,7 @@ class Queue {
       this.data.push(curr.value);
       this.temp.pop();
       curr = curr.next;
-    }
-
-    // for(let i = 0; i <= this.data.length; i++){
-    // // console.log(this.data.pop());
-    //   this.temp.push(this.data.pop());
-    // }
-
-    // console.log(this.temp.pop());
-    // this.temp.pop();
-
-    // for(let i = 0; i <= this.temp.length; i++){
-    //   this.temp.pop(this.data.push());
-    // }
-    
+    }   
    
   }
   
